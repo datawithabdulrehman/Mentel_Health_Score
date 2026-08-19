@@ -2,7 +2,7 @@
   "use strict";
 
   // Local testing ke liye port 8080 use kiya hai
-  const API_BASE = "http://127.0.0.1:8000";
+  const API_BASE = "https://railway.app";
 
   // Elements mapping
   const form = document.getElementById("predict-form");
