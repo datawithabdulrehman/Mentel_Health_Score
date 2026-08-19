@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 from typing_extensions import Literal
 from fastapi.middleware.cors import CORSMiddleware
 
-# 1. Paths ko automatic theek karne ke liye configuration
+# 1. Paths configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(BASE_DIR, 'Mental_Health_Model.pkl')
 
@@ -45,7 +45,7 @@ class StudentData(BaseModel):
 class PredictionResponse(BaseModel):
     predicted_mental_health_score: float
 
-# 6. Home Route (Fix kiya hua syntax)
+# 6. Home Route
 @app.get('/')
 def greet():
     return {"message": "Welcome to ABX REHMAN Mental Health Prediction API"}
@@ -56,6 +56,7 @@ def predict(data: StudentData):
    
    country_group = data.country if data.country in top_countries else "Other"
 
+   # DataFrame columns fixed exactly to match your ML Model tracking requirement
    input_row = pd.DataFrame([{
         'Age'                       : data.age,
         'Gender'                    : data.gender,
