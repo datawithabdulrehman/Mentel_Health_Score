@@ -2,7 +2,7 @@
   "use strict";
 
   // Local testing ke liye port 8080 use kiya hai
-  const API_BASE = "mentelhealthscore-production-bf50.up.railway.app";
+  const API_BASE = "https://mentelhealthscore-production-bf50.up.railway.app";
 
   // Elements mapping
   const form = document.getElementById("predict-form");
